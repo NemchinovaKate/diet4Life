@@ -1,0 +1,74 @@
+<resources>
+    <string name="app_name">Diet4Life</string>
+    <string name="titleOfApplication">Diet4Life</string>
+    <string name="str_calculation">Приступить к расчетам</string>
+    <string name="str_food">Перейти к рациону</string>
+    <string name="str_advice">Рекомендации</string>
+    <string name="str_info">Справка</string>
+    <string name="str_exit">Выход</string>
+    <string name="info_title">Справочная информация</string>
+    <string name="info_IMT_calculation">Расчет ИМТ (формула, ее объяснение, зачем нужен)</string>
+    <string name="info_calculation_elements_day">Расчет нормы калорий, БЖУ, вода, минералы, витамины (формулы, их пояснение, документы, откуда взялись сведенья)</string>
+    <string name="info_KBZhU_calculation">Расчет КБЖУ, исходя из цели и болезни (формулы, пояснения)</string>
+    <string name="info_diet">Формирование рациона (описание общих принципов)</string>
+    <string name="imt_save_weight">Сохранение веса в норме</string>
+    <string name="imt_weight_loss">Снижение веса</string>
+    <string name="imt_muscle_gain">Набор мышечной массы</string>
+    <string name="imt_imt_equales">Ваш ИМТ равен</string>
+    <string name="imt_hint_one">(конкретное значение исходя из введенных данных)</string>
+    <string name="imt_result">Выберите желаемый результат:</string>
+    <string name="imt_hint_two">(конкретная рекомендация исходя из ИМТ)</string>
+    <!--<string name="imt_advice_normal_part1"> Значение расчета индекса массы тела находится в категории "Норма". Ваш оптимальный вес от (вставить свое)</string>
+    <string name="imt_advice_normal_part2"> до (вставить свое) </string>-->
+    <string name="imt_advice_normal_part2">Это предпочтительная категория для большинства людей. Нахождение в этой категории означает, что у Вас наименьший риск заболеваний. Ваша задача - избежать увеличение веса с помощью двигательной активности и здорового питания. </string>
+    <string name="advice_norma_kkal_day">Ваша норма калорий на один день составляет:</string>
+    <string name="advice_norma">Среди них:</string>
+    <string name="advice_proteins">"Белки составляют"</string>
+    <string name="advice_fats">"Жиры составляют"</string>
+    <string name="advice_carbohydrates">"Углеводы составляют"</string>
+    <string name="advice_water">Норма потребления воды в сутки:</string>
+    <string name="advice_other">Необходимые витамины, минералы и микроэлементы</string>
+    <string name="advice_btn_to_food">Перейти к рациону на день</string>
+    <string name="advice_table_one">Витамины и макроэлементы</string>
+    <string name="advice_table_two">мг/сутки</string>
+    <string name="food_number">№</string>
+    <string name="food_food">ингридиент</string>
+    <string name="food_weight">грамм</string>
+    <string name="food_kkal">К</string>
+    <string name="food_protein">Б</string>
+    <string name="food_fats">Ж</string>
+    <string name="food_carbohydrates">У</string>
+    <string name="food_breakfast">Завтрак</string>
+    <string name="food_lunch">Обед</string>
+    <string name="food_dinner">Ужин</string>
+    <string name="snack_1">Перекус 1</string>
+    <string name="snack_2">Перекус 2</string>
+    <string name="calculate_title">Заполните все предлагаемые поля</string>
+    <string name="calculate_weight">Вес</string>
+    <string name="calculate_high">Рост</string>
+    <string name="calculate_age">Возраст</string>
+    <string name="calculate_male">Пол</string>
+    <string name="calculate_man">М</string>
+    <string name="calculate_woman">Ж</string>
+    <string name="calculate_level_actions">Уровень активности</string>
+    <string name="calculate_time_actions">Среднее время активности в день</string>
+    <string name="calculate_weight_measure">кг</string>
+    <string name="calculate_high_measure">см</string>
+    <string name="calculate_time_measure">ч</string>
+    <string name="calculate_illтуыы">Заболевания:</string>
+    <string name="calculate_count">Рассчитать</string>
+    <string name="calculate_null_illness">Нет указанных заболеваний</string>
+    <string name="calculate_gastritis">Гастрит</string>
+    <string name="calculate_hypertension">Гипертония</string>
+    <string name="calculate_coronary_heart_disease">Ишемическая болезнь сердца</string>
+    <string name="calculate_HIV">Вич</string>
+    <string name="calculate_diabetes">Диабет</string>
+
+
+    <string-array name="level_action">
+        <item>(коэффициент активности 1)</item>
+        <item>(коэффициент активности 2)</item>
+        <item>(коэффициент активности 3)</item>
+        <item>(коэффициент активности 4)</item>
+    </string-array>
+</resources>

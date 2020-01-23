@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#E763B0</color>
+    <color name="colorPrimaryDark">#D805B6</color>
+    <color name="colorAccent">#D81B60</color>
+
+
+    <color name="color_black">#000000</color>
+    <color name="color_for_main_btn">#9ACBEE</color>
+    <color name="color_imt_text">#E2A7CF</color>
+    <color name="color_advice_grey">#636363</color>
+    <color name="color_food_grey">#A09C9C</color>
+    <color name="color_advice_white">#ffffff</color>
+    <color name="color_food_violet">#7756A7</color>
+    <color name="color_calculate_illness">#B490C9</color>
+</resources>

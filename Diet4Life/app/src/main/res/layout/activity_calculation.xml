@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CalculationActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/upper_part_height"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iv_logo"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/marL_marR_iv_tv"
+                android:layout_marginTop="@dimen/marT_marB_iv_tv"
+                android:layout_marginEnd="@dimen/marT_marB_iv_tv"
+                android:layout_marginBottom="@dimen/marL_marR_iv_tv"
+                android:src="@drawable/test"
+                app:srcCompat="@drawable/test" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/info_ll_ll_tv_marT"
+                android:text="@string/app_name"
+                android:textSize="@dimen/info_ll_ll_tv_textSize"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="end"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_to_info"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="@dimen/marT_marB_iv_tv"
+                android:layout_marginEnd="@dimen/marT_marB_iv_tv"
+                android:layout_marginBottom="@dimen/marL_marR_iv_tv"
+                android:layout_marginStart="@dimen/marL_marR_iv_tv"
+                android:background="@drawable/style_btn_rectangle"
+                android:onClick="onToInfoButtonClick" />
+            <Button
+                android:id="@+id/btn_to_main"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="@dimen/marT_marB_iv_tv"
+                android:layout_marginEnd="@dimen/marT_marB_iv_tv"
+                android:layout_marginBottom="@dimen/marL_marR_iv_tv"
+                android:background="@drawable/style_btn_circle"
+                android:onClick="onToMainButtonClick" />
+        </LinearLayout>
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_black"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/tv_title_textSize"
+            android:textColor="@color/color_black"
+            android:layout_marginTop="@dimen/marT_marB_iv_tv"
+            android:layout_marginStart="@dimen/marStart"
+            android:text="@string/calculate_title"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="@dimen/marStart"
+                android:textSize="@dimen/tv_advice_textSize"
+                android:textColor="@color/color_black"
+                android:text="@string/calculate_weight" />
+
+            <EditText
+                android:id="@+id/et_weight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/marEnd"
+                android:layout_weight="1"
+                android:ems="5"
+                android:inputType="numberDecimal" />
+
+            <TextView
+                android:id="@+id/tv_measure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="@dimen/marStart"
+                android:textSize="@dimen/tv_advice_textSize"
+                android:textColor="@color/color_black"
+                android:text="@string/calculate_weight_measure" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="@dimen/marStart"
+                android:textSize="@dimen/tv_advice_textSize"
+                android:textColor="@color/color_black"
+                android:text="@string/calculate_high" />
+
+            <EditText
+                android:id="@+id/et_high"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="@dimen/marEnd"
+                android:ems="5"
+                android:inputType="numberDecimal" />
+
+            <TextView
+                android:id="@+id/tv_measure2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="@dimen/marStart"
+                android:textSize="@dimen/tv_advice_textSize"
+                android:textColor="@color/color_black"
+                android:text="@string/calculate_high_measure" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/marStart"
+                android:layout_weight="1"
+                android:text="@string/calculate_age"
+                android:textColor="@color/color_black"
+                android:textSize="@dimen/tv_advice_textSize" />
+
+            <EditText
+                android:id="@+id/et_age"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/marEnd_calcul_cb"
+                android:layout_weight="2"
+                android:ems="5"
+                android:inputType="numberDecimal" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="@dimen/marStart"
+                android:textSize="@dimen/tv_advice_textSize"
+                android:textColor="@color/color_black"
+                android:text="@string/calculate_male" />
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_weight="1" >
+
+                <RadioButton
+                    android:id="@+id/rb_man"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/marBetweenRadB"
+                    android:text="@string/calculate_man" />
+
+                <RadioButton
+                    android:id="@+id/rb_woman"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/calculate_woman" />
+            </RadioGroup>
+
+        </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginTop="@dimen/marT_marB_iv_tv"
+                android:layout_marginStart="@dimen/marStart"
+                android:textSize="@dimen/tv_advice_textSize"
+                android:textColor="@color/color_black"
+                android:text="@string/calculate_level_actions" />
+
+            <Spinner
+                android:id="@+id/spinner_level_action"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/marStart"
+                android:layout_weight="1" />
+
+
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/marStart"
+                android:textSize="@dimen/tv_advice_textSize"
+                android:layout_marginTop="@dimen/marT_marB_iv_tv"
+                android:textColor="@color/color_black"
+                android:text="@string/calculate_time_actions" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/et_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/marT_marB_iv_tv"
+                android:layout_marginEnd="@dimen/marEnd"
+                android:layout_weight="1"
+                android:layout_marginStart="@dimen/marStart"
+                android:ems="5"
+                android:inputType="numberDecimal" />
+            <TextView
+                android:id="@+id/tv_measure3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="@dimen/tv_advice_textSize"
+                android:textColor="@color/color_black"
+                android:text="@string/calculate_time_measure" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/marT_marB_iv_tv"
+                android:layout_marginStart="@dimen/marStart"
+                android:textSize="@dimen/tv_advice_textSize"
+                android:textColor="@color/color_black"
+                android:text="@string/calculate_illтуыы" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/style_cb_calculate"
+                android:layout_marginStart="@dimen/marStart"
+                android:layout_marginEnd="@dimen/marEnd_calcul_cb"
+                android:orientation="vertical">
+            <CheckBox
+                android:id="@+id/cb_diabetes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/calculate_diabetes" />
+            <CheckBox
+                android:id="@+id/cb_HIV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/calculate_HIV" />
+            <CheckBox
+                android:id="@+id/cb_coronary_heart_disease"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/calculate_coronary_heart_disease" />
+            <CheckBox
+                android:id="@+id/cb_hypertension"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/calculate_hypertension" />
+            <CheckBox
+                android:id="@+id/cb_gastritis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/calculate_gastritis" />
+            </LinearLayout>
+
+            <CheckBox
+                android:id="@+id/cb_null_illness"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/marStart"
+
+                android:text="@string/calculate_null_illness" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_calculate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/marEnd"
+            android:layout_marginStart="@dimen/marStart"
+            android:onClick="onAdviceCliclButton"
+            android:layout_marginBottom="@dimen/tv_marBottom"
+            android:text="@string/calculate_count" />
+
+    </LinearLayout>
+    </ScrollView>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

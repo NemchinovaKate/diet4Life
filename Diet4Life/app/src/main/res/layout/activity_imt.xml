@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".IMTActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/upper_part_height"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/iv_logo"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/marL_marR_iv_tv"
+                    android:layout_marginTop="@dimen/marT_marB_iv_tv"
+                    android:layout_marginEnd="@dimen/marT_marB_iv_tv"
+                    android:layout_marginBottom="@dimen/marL_marR_iv_tv"
+                    android:src="@drawable/test"
+                    app:srcCompat="@drawable/test" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/info_ll_ll_tv_marT"
+                    android:text="@string/app_name"
+                    android:textSize="@dimen/info_ll_ll_tv_textSize"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="end"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_to_calculate"
+                    android:layout_width="36dp"
+                    android:layout_height="31dp"
+                    android:layout_marginTop="@dimen/marT_marB_iv_tv"
+                    android:layout_marginEnd="@dimen/marT_marB_iv_tv"
+                    android:layout_marginBottom="@dimen/marL_marR_iv_tv"
+                    android:background="@drawable/style_btn_triangle"
+                    android:onClick="onToCalculateButtonClick"
+                    android:rotation="180" />
+                <Button
+                    android:id="@+id/btn_to_info"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginTop="@dimen/marT_marB_iv_tv"
+                    android:layout_marginEnd="@dimen/marT_marB_iv_tv"
+                    android:layout_marginBottom="@dimen/marL_marR_iv_tv"
+                    android:background="@drawable/style_btn_rectangle"
+                    android:onClick="onToInfoButtonClick" />
+                <Button
+                    android:id="@+id/btn_to_main"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginTop="@dimen/marT_marB_iv_tv"
+                    android:layout_marginEnd="@dimen/marT_marB_iv_tv"
+                    android:layout_marginBottom="@dimen/marL_marR_iv_tv"
+                    android:background="@drawable/style_btn_circle"
+                    android:onClick="onToMainButtonClick" />
+            </LinearLayout>
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_black"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/tv_title_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/tv_title_textSize"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/marT_marB_iv_tv"
+                    android:text="@string/imt_imt_equales" />
+
+                <TextView
+                    android:id="@+id/iv_imt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/tv_title_textSize"
+                    android:layout_marginBottom="@dimen/tv_marBottom"
+                    android:text="21,23" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/tv_info_textSize"
+                    android:layout_marginStart="@dimen/marStart"
+                    android:layout_marginBottom="@dimen/tv_marBottom"
+                    android:layout_marginEnd="@dimen/marEnd"
+                    android:text="@string/imt_hint_one" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/color_black"/>
+
+                <TextView
+                    android:id="@+id/tv_advice_part1_normal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/info_ll_sv_tv_textSize"
+                    android:background="@color/color_imt_text"
+                    android:paddingStart="@dimen/marStart"
+                    android:text="Значение расчета индекса массы тела находится в категории 'Норма'. Ваш оптимальный вес от (вставить свое) до (вставить свое) кг." />
+                   />
+
+                <TextView
+                    android:id="@+id/tv_advice_part2_normal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/color_imt_text"
+                    android:textSize="@dimen/info_ll_sv_tv_textSize"
+                    android:paddingStart="@dimen/marStart"
+                    android:paddingBottom="@dimen/tv_marBottom"
+                    android:text="@string/imt_advice_normal_part2" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/color_black"/>
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/tv_info_textSize"
+                    android:layout_marginStart="@dimen/marStart"
+                    android:layout_marginBottom="@dimen/tv_marBottom"
+                    android:text="@string/imt_hint_two" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/color_black"/>
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:textSize="@dimen/tv_info_result_textSize"
+                    android:layout_marginTop="@dimen/marT_marB_iv_tv"
+                    android:layout_marginBottom="@dimen/marT_marB_iv_tv"
+                    android:text="@string/imt_result" />
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/info_btns_height"
+                    android:orientation="horizontal"
+                    android:layout_marginStart="@dimen/marStart"
+                    android:layout_marginEnd="@dimen/marEnd"
+                    android:layout_marginBottom="@dimen/marT_marB_iv_tv">
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:onClick="onClickAdviceButtonSave"
+                        android:text="@string/imt_save_weight">
+
+                    </Button>
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="onClickAdviceButtonDown"
+                        android:layout_marginStart="@dimen/marStart"
+                        android:layout_marginEnd="@dimen/marEnd"
+                        android:text="@string/imt_weight_loss">
+
+                    </Button>
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:onClick="onClickAdviceButtonUp"
+                        android:text="@string/imt_muscle_gain">
+
+                    </Button>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
