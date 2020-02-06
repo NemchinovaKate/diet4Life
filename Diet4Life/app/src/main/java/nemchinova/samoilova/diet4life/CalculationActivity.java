@@ -33,18 +33,27 @@ public class CalculationActivity extends AppCompatActivity {
     public EditText et_weight;
     public EditText et_high;
     public EditText et_age;
+    public EditText et_waist;
+    public EditText et_hips;
+    public EditText et_neck;
     //public boolean sex; //правда - женщина
     public int levelActions;
     public EditText et_time;
     public String illness="";
 
-    private final String key_weight = "Weight";
-    private final String key_high = "High";
-    private final String key_age = "Age";
-    private final String key_sex = "Sex";
-    private final String key_levelActions = "Level_Actions";
-    private final String key_timeActions = "Time_Actions";
-    private final String key_illness = "Illness";
+    public final String key_weight = "Weight";
+    public final String key_high = "High";
+    public final String key_age = "Age";
+    public final String key_waist = "Waist";
+    public final String key_hips = "Hips";
+    public final String key_neck = "Neck";
+    public final String key_sex = "Sex";
+    public final String key_levelActions = "Level_Actions";
+    public final String key_timeActions = "Time_Actions";
+    public final String key_illness = "Illness";
+    public final String key_info = "infoAboutUser";
+    public final String key_sex_w = "woman";
+    public final String key_sex_m = "man";
 
 
     private SharedPreferences sharedPreferences;
@@ -150,16 +159,22 @@ public class CalculationActivity extends AppCompatActivity {
             }
         });
 
-        sharedPreferences = getSharedPreferences("infoAboutUser",MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences(key_info,MODE_PRIVATE);
         et_high = findViewById(R.id.et_high);
         et_weight = findViewById(R.id.et_weight);
         et_age = findViewById(R.id.et_age);
         et_time = findViewById(R.id.et_time);
+        et_waist = findViewById(R.id.et_size_waist);
+        et_hips = findViewById(R.id.et_size_hips);
+        et_neck = findViewById(R.id.et_size_neck);
 
         if (sharedPreferences.getString(key_weight,"0").length() >1){
             et_high.setText(sharedPreferences.getString(key_high,"0"));
             et_weight.setText(sharedPreferences.getString(key_weight,"0"));
             et_age.setText(sharedPreferences.getString(key_age,"0"));
+            et_hips.setText(sharedPreferences.getString(key_hips,"0"));
+            et_waist.setText(sharedPreferences.getString(key_waist,"0"));
+            et_neck.setText(sharedPreferences.getString(key_neck,"0"));
             et_time.setText(sharedPreferences.getString(key_timeActions,"0"));
 
             if (sharedPreferences.getString(key_sex,"").length()<4){
@@ -192,21 +207,22 @@ public class CalculationActivity extends AppCompatActivity {
                         break;
                 }
             }
-
         }
-
     }
 
     public void onToInfoButtonClick(View view) {
-        intents(CalculationActivity.this,InformationActivity.class);
+        intents(CalculationActivity.this,InformationActivity.class,false);
     }
 
     public void onToMainButtonClick(View view) {
-        intents(CalculationActivity.this,MainActivity.class);
+        intents(CalculationActivity.this,MainActivity.class,false);
     }
 
-    public void intents(Context context, Class c){
+    public void intents(Context context, Class c,boolean flag){
         Intent i = new Intent(context,c);
+        if (flag){
+            i.putExtra("From","yes");
+        }
         startActivity(i);
     }
 
@@ -232,27 +248,21 @@ public class CalculationActivity extends AppCompatActivity {
     }
 
 
-
-
-
     public void onAdviceCliclButton(View view) {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString(key_weight,et_weight.getText().toString());
-       // editor.apply();
         editor.putString(key_high,et_high.getText().toString());
-     //   editor.apply();
         editor.putString(key_age,et_age.getText().toString());
-    //    editor.apply();
+        editor.putString(key_waist,et_waist.getText().toString());
+        editor.putString(key_hips,et_hips.getText().toString());
+        editor.putString(key_neck,et_neck.getText().toString());
         if (rMan.isChecked()){
-            editor.putString(key_sex,"man");
+            editor.putString(key_sex,key_sex_m);
         }else{
-            editor.putString(key_sex,"woman");
+            editor.putString(key_sex,key_sex_w);
         }
-      //  editor.apply();
         editor.putString(key_levelActions,levelActions+"");
-      //  editor.apply();
         editor.putString(key_timeActions,et_time.getText().toString());
-      //  editor.apply();
         if (ch_null.isChecked()){
             illness = illness+"0";
         }else {
@@ -275,7 +285,6 @@ public class CalculationActivity extends AppCompatActivity {
         editor.putString(key_illness,illness);
         editor.apply();
 
-
-        intents(CalculationActivity.this,IMTActivity.class);
+        intents(CalculationActivity.this,IMTActivity.class,true);
     }
 }
