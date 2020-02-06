@@ -1,6 +1,7 @@
 package nemchinova.samoilova.diet4life;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.Intent;
@@ -8,11 +9,33 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class FoodActivity extends AppCompatActivity {
+
+    private ListView list_breakf;
+    private ListView list_dinner;
+    private ListView list_evening;
+    private ListView list_snack1;
+    private ListView list_snack2;
+    private RecycleAdapter adapter1;
+    private RecycleAdapter adapter2;
+    private RecycleAdapter adapter3;
+    private RecycleAdapter adapter4;
+    private RecycleAdapter adapter5;
+
+    private List<ItemClass> listItemClassBreak;
+    private List<ItemClass> listItemClassDinner;
+    private List<ItemClass> listItemClassEvening;
+    private List<ItemClass> listItemClassSnack1;
+    private List<ItemClass> listItemClassSnack2;
+    private ItemClass itemClass;
 
     public TableRow tableRow;
     final int tables = 5;
@@ -25,32 +48,114 @@ public class FoodActivity extends AppCompatActivity {
     public TextView t6_food;
     public TextView t7_food;
 
-    String[] array0 = {"1","2"};
-    String[] array1 = {"Рис","Масло подсолнечное"};
-    String[] array2 = {"100","100"};
-    String[] array3 = {"344","344"};
-    String[] array4 = {"6.7","6.7"};
-    String[] array5 = {"0.7","0.7"};
-    String[] array6 = {"78.9","78.9"};
+    String[] array0 = {"1","2","1","2","2"};
+    String[] array1 = {"Рис","Масло подсолнечное","Рис","Масло подсолнечное","Масло подсолнечное"};
+    String[] array2 = {"100","100","100","100","100"};
+    String[] array3 = {"344","344","344","344","344"};
+    String[] array4 = {"6.7","6.7","6.7","6.7","6.7"};
+    String[] array5 = {"0.7","0.7","0.7","0.7","0.7"};
+    String[] array6 = {"78.9","78.9","78.9","78.9","78.9"};
+    String[] array7 = {"1","2","2"};
+    String[] array8 = {"Рис","Масло подсолнечное","Масло подсолнечное"};
+    String[] array9 = {"100","100","100"};
+    String[] array10 = {"344","344","344"};
+    String[] array11 = {"6.7","6.7","6.7"};
+    String[] array12 = {"0.7","0.7","0.7"};
+    String[] array13 = {"78.9","78.9","78.9"};
     String[][] arr = {array0,array1,array2,array3,array4,array5,array6};
+    String[][] arr1 = {array7,array8,array9,array10,array11,array12,array13};
     public TableRow.LayoutParams weightParams;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_food);
+        setContentView(R.layout.activity_food3);
 
-        Array r = new Array();
+
+
+         listItemClassBreak = new ArrayList<>();
+      listItemClassDinner = new ArrayList<>();
+        listItemClassEvening = new ArrayList<>();
+        listItemClassSnack1 = new ArrayList<>();
+        listItemClassSnack2 = new ArrayList<>();/**/
+
+
+     /* list_breakf = findViewById(R.id.list_breakfast);
+        list_dinner = findViewById(R.id.list_dinner);
+        list_evening = findViewById(R.id.list_evening);
+        list_snack1 = findViewById(R.id.list_snack1);
+        list_snack2 = findViewById(R.id.list_snack2);*/
+
+        fillArray(listItemClassBreak,arr);
+       fillArray(listItemClassDinner,arr);
+        fillArray(listItemClassEvening,arr);
+        fillArray(listItemClassSnack1,arr1);
+        fillArray(listItemClassSnack2,arr1); /* */
+
+        RecyclerView recyclerView1 = findViewById(R.id.list_breakfast);
+        RecyclerView recyclerView2 = findViewById(R.id.list_dinner);
+        RecyclerView recyclerView3 = findViewById(R.id.list_lastbig);
+        RecyclerView recyclerView4 = findViewById(R.id.list_snack1);
+        RecyclerView recyclerView5 = findViewById(R.id.list_snack2);
+
+
+       adapter1 = new RecycleAdapter(this, listItemClassBreak);
+    adapter2 = new RecycleAdapter(this,listItemClassDinner);
+        adapter3 = new RecycleAdapter(this,listItemClassEvening);
+        adapter4 = new RecycleAdapter(this,listItemClassSnack1);
+        adapter5 = new RecycleAdapter(this,listItemClassSnack2);  /**/
+        /* */
+
+        recyclerView1.setAdapter(adapter1);
+        recyclerView2.setAdapter(adapter2);
+        recyclerView3.setAdapter(adapter3);
+        recyclerView4.setAdapter(adapter4);
+        recyclerView5.setAdapter(adapter5);
+
+        //adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,new ArrayList<String>(Arrays.asList(array)));
+       /* list_breakf.setAdapter(adapter1);
+      list_dinner.setAdapter(adapter2);
+        list_evening.setAdapter(adapter3);
+        list_snack1.setAdapter(adapter4);
+        list_snack2.setAdapter(adapter5);  */
+
+
+
+
+    /*Array r = new Array();
        weightParams = new TableRow.LayoutParams();
         weightParams.weight = 1;
 
         for (int j = 0; j < tables; j++) {
-            addToTable(r.table_food[j]);
+          addToTable(r.table_food[j]);
+        }   */
+    }
+
+    private void fillArray( List<ItemClass> listItemClass, String[][] arrayCustom )
+    {
+       // if(adapter != null)  adapter.clear();
+
+        for(int i = 0; i < arrayCustom[0].length; i++)
+        {
+            itemClass = new ItemClass();
+            itemClass.setName(array1[i]);
+            Log.d("!!!!!!",itemClass.getName());
+            itemClass.setProtein(array4[i]);
+            itemClass.setFats(array5[i]);
+            itemClass.setCarb(array6[i]);
+            itemClass.setKkal(array3[i]);
+            itemClass.setGramm(array2[i]);
+            Log.d("!!!!!!",itemClass.getGramm());
+
+            listItemClass.add(itemClass);
         }
+
+      //  if(adapter != null) adapter.notifyDataSetChanged();
+
     }
 
 
-    public void addToTable(int t){
+   /**/ public void addToTable(int t){
 
         TableLayout tableLayout = findViewById(t);
         for (int j = 0;j<array0.length;j++) {
@@ -132,7 +237,7 @@ public class FoodActivity extends AppCompatActivity {
         }
 
 
-    }
+    }/**/
 
     public void onToAdviceButtonClick(View view) {
         intents(FoodActivity.this,AdviceActivity.class);
