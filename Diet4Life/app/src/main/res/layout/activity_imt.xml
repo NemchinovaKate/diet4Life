@@ -116,25 +116,6 @@
                     android:text="21,23" />
 
                 <TextView
-                    android:id="@+id/tv_title_info_fats"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="@dimen/tv_title_textSize"
-                    android:gravity="center"
-                    android:layout_marginTop="@dimen/marT_marB_iv_tv"
-                    android:text="@string/IMT_size_fats" />
-
-                <TextView
-                    android:id="@+id/tv_fats_size"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:textStyle="bold"
-                    android:textSize="@dimen/tv_title_textSize"
-                    android:layout_marginBottom="@dimen/tv_marBottom"
-                    android:text="21,23 %" />
-
-                <TextView
                     android:id="@+id/textView4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

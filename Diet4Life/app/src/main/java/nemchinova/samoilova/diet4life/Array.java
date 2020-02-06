@@ -2,7 +2,7 @@ package nemchinova.samoilova.diet4life;
 
 public class Array {
 
-  /**/  final int[] table_food = {
+    final int[] table_food = {
             R.id.table_breakfast,
             R.id.table_lunch,
             R.id.table_dinner,
