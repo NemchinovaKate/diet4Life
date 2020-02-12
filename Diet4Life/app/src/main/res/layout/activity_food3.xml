@@ -119,7 +119,11 @@
                         android:id="@+id/table_captain"
                         android:background="@color/color_black">
 
+
                   <!--  <TextView
+
+               
+
                         android:text="@string/food_number"
                         android:id="@+id/food_number"
                         android:width="10dp"
@@ -128,7 +132,11 @@
                         android:layout_weight="1"
                         android:layout_margin="1dip"
                         android:textColor="#000000"
+
                         />-->
+
+                      
+
                     <TextView
                         android:text="@string/food_food"
                         android:id="@+id/food_food"

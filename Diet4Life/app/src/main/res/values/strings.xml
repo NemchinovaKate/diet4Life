@@ -63,20 +63,25 @@
     <string name="calculate_coronary_heart_disease">Ишемическая болезнь сердца</string>
     <string name="calculate_HIV">Вич</string>
     <string name="calculate_diabetes">Диабет</string>
+    <string name="calculation_waist">Талия</string>
+    <string name="calculation_hips">Бедра</string>
+    <string name="calculation_neck">Шея</string>
+    <string name="IMT_size_fats">Процент жира в организме</string>
 
 
     <string-array name="level_action">
-<<<<<<< Updated upstream
-        <item>(коэффициент активности 1)</item>
-        <item>(коэффициент активности 2)</item>
-        <item>(коэффициент активности 3)</item>
-        <item>(коэффициент активности 4)</item>
-=======
         <item>минимальная активность</item>
         <item>слабый уровень активности</item>
         <item>умеренный уровень активности</item>
-        <item>тяжелая/трудоемкая активность</item>
+        <item>тяжелая/трдоемкая активность</item>
         <item>экстремальный уровень</item>
->>>>>>> Stashed changes
     </string-array>
+
+   <string-array name="food_table">
+        <item>  R.id.table_breakfast</item>
+        <item> R.id.table_lunch</item>
+        <item>R.id.table_dinner</item>
+        <item> R.id.table_snack_1</item>
+        <item> R.id.table_snack_2</item>
+    </string-array>  <!---->
 </resources>

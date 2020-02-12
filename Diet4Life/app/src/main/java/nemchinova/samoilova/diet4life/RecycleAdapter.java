@@ -2,6 +2,7 @@ package nemchinova.samoilova.diet4life;
 
 import android.content.Context;
 import android.graphics.Paint;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,7 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.ViewHold
 
     private LayoutInflater inflater;
     private List<ItemClass> list;
+
     boolean[] cheched;
 
     public RecycleAdapter ( Context parent, List<ItemClass> list,boolean[] bool){
@@ -36,6 +38,7 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull final ViewHolderForList holder, final int position) {
+
         ItemClass itemClass = list.get(position);
         holder.protein.setText(itemClass.getProtein());
         holder.name.setText(itemClass.getName());
@@ -43,6 +46,7 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.ViewHold
         holder.carb.setText(itemClass.getCarb());
         holder.gramm.setText(itemClass.getGramm());
         holder.kkal.setText(itemClass.getKkal());
+
         holder.cb.setChecked(cheched[position]);
         if (holder.cb.isChecked()){
             holder.name.setPaintFlags(holder.name.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
@@ -68,6 +72,7 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.ViewHold
 
     public boolean[] getChecked() {
         return cheched;
+
     }
 
     @Override
@@ -83,6 +88,7 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.ViewHold
         TextView fats;
         TextView carb;
         TextView gramm;
+
         CheckBox cb;
 
         public ViewHolderForList(@NonNull View itemView) {
@@ -93,6 +99,7 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.ViewHold
             carb = itemView.findViewById(R.id.list_tv_carb);
             gramm = itemView.findViewById(R.id.list_tv_gramm);
             kkal = itemView.findViewById(R.id.list_tv_kkal);
+
             cb = itemView.findViewById(R.id.cb_list);
         }
     }
